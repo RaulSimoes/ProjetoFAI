@@ -56,7 +56,7 @@
 	
 	<bean id="cliente" class="fai.domain.Cliente"/>
 	<bean id="tipo" class="fai.domain.TipoCliente"/>
-	<bean id="categoria" class="fai.domain.Categoria"/>
+	<bean id="categoria" class="fai.domain.Categoria"/>	
 
 	<bean id="commandFrontControllerSalvar"
 		class="fai.controle.web.command.impl.CommandFrontControllerSalvar">

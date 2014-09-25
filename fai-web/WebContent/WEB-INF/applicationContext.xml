@@ -19,6 +19,7 @@
 			<map>
 				<entry key="fai.domain.TipoCliente" value-ref="tipoClienteDAO"/>
 				<entry key="fai.domain.Categoria" value-ref="categoriaJpaDAO"/>
+				<entry key="fai.domain.Usuario" value-ref="usuarioJpaDAO"/><!--usuario-->
 			</map>
 		</property>
 	</bean>
@@ -36,6 +37,7 @@
 		<entry key="/fai-web/SalvarTipoCliente" value-ref="salvarTipoClienteVHWeb" />
 		<entry key="/fai-web/SalvarCliente" value-ref="salvarClienteVHWeb" />
 		<entry key="/fai-web/SalvarCategoria" value-ref="salvarCategoriaVHWeb" />
+		<entry key="/fai-web/SalvarUsuario" value-ref="salvarUsuarioVHWeb" /><!--usuario-->
 
 	</util:map>
 
@@ -48,6 +50,11 @@
 		class="fai.controle.web.vh.SalvarCategoriaVHWeb">
 		<property name="categoria" ref="categoria"/>
 	</bean>
+	<!--usuario-->
+	<bean id="salvarUsuarioVHWeb"
+		class="fai.controle.web.vh.SalvarUsuarioVHWeb">
+		<property name="usuario" ref="usuario"/>
+	</bean>
 	
 	<bean id="salvarClienteVHWeb"
 		class="fai.controle.web.vh.SalvarClienteVHWeb">
@@ -57,6 +64,7 @@
 	<bean id="cliente" class="fai.domain.Cliente"/>
 	<bean id="tipo" class="fai.domain.TipoCliente"/>
 	<bean id="categoria" class="fai.domain.Categoria"/>	
+	<bean id="usuario" class="fai.domain.Usuario"/><!--usuario-->
 
 	<bean id="commandFrontControllerSalvar"
 		class="fai.controle.web.command.impl.CommandFrontControllerSalvar">
@@ -107,7 +115,11 @@
 	<bean id="categoriaJpaDAO" class="fai.dao.jpa.impl.CategoriaJpaDAO">
 		<property name="emf" ref="entityManagerFactory" />
 	</bean>
-
+	
+	<!--usuario-->
+	<bean id="usuarioJpaDAO" class="fai.dao.jpa.impl.UsuarioJpaDAO">
+		<property name="emf" ref="entityManagerFactory" />
+	</bean>
 
 <!--  entity manager factory  -->
   <bean id="entityManagerFactory" 

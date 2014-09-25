@@ -16,8 +16,9 @@ import javax.persistence.*;
 public class Usuario extends EntidadeDominio implements Serializable {
 
 	
-	private String nomea;
-	private Integer conta;
+	private String nome;
+	private String conta;
+	private String cpf;
 	private String senha;
 	private Float saldo;
 	private Float salario;
@@ -31,19 +32,29 @@ public class Usuario extends EntidadeDominio implements Serializable {
 		super();
 	}   
 	public String getNome() {
-		return this.nomea;
+		return this.nome;
 	}
 
 	public void setNome(String nome) {
-		this.nomea = nome;
+		this.nome = nome;
 	}   
-	public Integer getConta() {
-		return this.conta;
+	
+	public String getConta() {
+		return conta;
+	}
+	
+	public void setConta(String conta) {
+		this.conta = conta;
 	}
 
-	public void setConta(Integer conta) {
-		this.conta = conta;
-	}   
+	public String getCpf() {
+		return cpf;
+	}
+	
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+	
 	public String getSenha() {
 		return this.senha;
 	}
